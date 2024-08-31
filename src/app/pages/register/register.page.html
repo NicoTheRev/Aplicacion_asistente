@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+       <ion-card-title>formulario registro</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+           <ion-input type="text" label="Nombres" labelPlacement="floating" name="nom"  placeholder="Ej: Giovanni Salvador"></ion-input>
+        </ion-item>
+        <ion-item>
+           <ion-input type="text" label="Apellidos" labelPlacement="floating" name="ape"  placeholder="Ej: Farfan Osorio"></ion-input>
+        </ion-item>
+        <ion-item>
+           <ion-input type="text" label="Rut" labelPlacement="floating" name="rut"  placeholder="Ej: 18491583-8"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="email" label="Email" labelPlacement="floating" name="email" placeholder="ej: usuario@gmail.com"></ion-input>
+       </ion-item>
+
+       <ion-item>
+         <ion-textarea label="Escríbenos!" labelPlacement="floating" name="comentario" placeholder="Cuéntanos sobre ti.."></ion-textarea>
+       </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <!--insertar un boton, centrar el boton, aplicar css personalizado
+       invocar método debe tener mensaje y un solo botón ok, redireccionando al page de Inicio-->
+       <div style="text-align: center; padding-bottom: 20px;">
+        <ion-button fill="solid" shape="round">
+          Enviar datos
+        </ion-button>
+       </div>
+      
+
+  </ion-card>
+</ion-content>
