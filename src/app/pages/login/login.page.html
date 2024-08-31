@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Aplicacion asistente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+       <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-input type="text" label="usuario" labelPlacement="floating" name="usu" [(ngModel)]="usu" placeholder="Nombre de usuario.."></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" label="Contraseña" labelPlacement="floating" name="contraseña"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div style="text-align: center;">
+        <ion-button (click)="mostrarMensaje()" fill="solid" >
+          Ingresar
+        </ion-button>
+      </div>
+    </ion-card-content>
+    <ion-card-subtitle>
+      Si aun no tienes usuario registrate aca
+    </ion-card-subtitle>
+    <div style="text-align: center;">
+      <ion-button (click)="registro()" fill="clear" size="small">
+        registrar
+      </ion-button>
+    </div>
+    
+  </ion-card>
+</ion-content>
