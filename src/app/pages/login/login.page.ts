@@ -22,10 +22,9 @@ export class LoginPage implements OnInit {
 
   async mostrarMensaje(){
     const alert = await this.alertcontroller.create({
-      header: 'Confirmación',
-      mode: 'ios',
+      header: 'Login correcto',
       cssClass:'alertHeader',
-      message: 'Bienvenido '+ this.usu +'!!',
+      message: 'Bienvenido '+ this.usu +' !!',
       buttons: [
         {
           text: 'OK',

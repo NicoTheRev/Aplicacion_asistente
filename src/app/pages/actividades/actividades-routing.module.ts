@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ActividadesPage
+  },  {
+    path: 'evento',
+    loadChildren: () => import('./evento/evento.module').then( m => m.EventoPageModule)
   }
+
 ];
 
 @NgModule({

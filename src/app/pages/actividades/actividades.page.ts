@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-actividades',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActividadesPage implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router,
+              ) { }
 
   ngOnInit() {
   }
 
+  async linkToEvento(){
+    this.router.navigate(['actividades/evento'])
+  }
 }
