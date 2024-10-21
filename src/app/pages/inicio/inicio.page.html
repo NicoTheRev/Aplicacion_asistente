@@ -15,59 +15,69 @@
       <ion-title size="large">Proximos eventos disponibles</ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  <!-- CARRUSEL -->
+  <swiper-container>
+    <!-- Primer card en el carrusel -->
+    <swiper-slide>
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/futbol.webp"/>
+        <ion-card-header>
+          <ion-card-title>Torneo de futbol</ion-card-title>
+          <ion-card-subtitle>7:00 PM</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Here's a small text description for the card content. Nothing more, nothing less.
+        </ion-card-content>
+        <ion-grid fixed>
+          <ion-row class="ion-justify-content-center">
+            <ion-button (click)="generarQR(eventos[0])">Registrar</ion-button>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </swiper-slide>
 
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/futbol.webp"/>
-    <ion-card-header>
-      <ion-card-title>Torneo de futbol</ion-card-title>
-      <ion-card-subtitle>7:00 PM</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-    <ion-grid fixed>
-      <ion-row class="ion-justify-content-center">
-        <ion-button>Registrar</ion-button>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-  
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/concierto.webp" />
-    <ion-card-header>
-      <ion-card-title>Concierto a puertas abiertas</ion-card-title>
-      <ion-card-subtitle>2:00 PM</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
+    <!-- Segundo card en el carrusel -->
+    <swiper-slide>
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/concierto.webp" />
+        <ion-card-header>
+          <ion-card-title>Concierto a puertas abiertas</ion-card-title>
+          <ion-card-subtitle>2:00 PM</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Here's a small text description for the card content. Nothing more, nothing less.
+        </ion-card-content>
+        <ion-grid fixed>
+          <ion-row class="ion-justify-content-center">
+            <ion-button (click)="generarQR(eventos[1])">Registrar</ion-button>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </swiper-slide>
 
-    <ion-grid fixed>
-      <ion-row class="ion-justify-content-center">
-        <ion-button>Registrar</ion-button>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-  
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/tuerca.jpg" />
-    <ion-card-header>
-      <ion-card-title>Expo taller</ion-card-title>
-      <ion-card-subtitle>4:00 PM</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
+    <!-- Tercer card en el carrusel -->
+    <swiper-slide>
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/tuerca.jpg" />
+        <ion-card-header>
+          <ion-card-title>Expo taller</ion-card-title>
+          <ion-card-subtitle>4:00 PM</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Here's a small text description for the card content. Nothing more, nothing less.
+        </ion-card-content>
+        <ion-grid fixed>
+          <ion-row class="ion-justify-content-center">
+            <ion-button (click)="generarQR(eventos[2])">Registrar</ion-button>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
 
-    <ion-grid fixed>
-      <ion-row class="ion-justify-content-center">
-        <ion-button>Registrar</ion-button>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-
+  <div *ngIf="qrData" style="text-align: center;">
+    <qrcode [qrdata]="qrData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
 
 </ion-content>
