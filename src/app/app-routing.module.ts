@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { autorizadoGuard } from './guards/autorizado.guard';
 
 const routes: Routes = [
   {
@@ -8,9 +9,39 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [autorizadoGuard]
+  },
+  {
+    path: 'actividades',
+    loadChildren: () => import('./pages/actividades/actividades.module').then( m => m.ActividadesPageModule),
+    canActivate: [autorizadoGuard]
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate: [autorizadoGuard]
+  },
+  {
+    path: 'actualizar-perfil/:id',
+    loadChildren: () => import('./pages/actualizar-perfil/actualizar-perfil.module').then( m => m.ActualizarPerfilPageModule),
+    canActivate: [autorizadoGuard]
+  },
+
+
 ];
 
 @NgModule({

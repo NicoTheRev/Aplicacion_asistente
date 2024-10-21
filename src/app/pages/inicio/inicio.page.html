@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulos-toolbar">Eventos disponibles</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Proximos eventos disponibles</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <img alt="Silhouette of mountains" src="assets/futbol.webp"/>
+    <ion-card-header>
+      <ion-card-title>Torneo de futbol</ion-card-title>
+      <ion-card-subtitle>7:00 PM</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-button>Registrar</ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  
+  <ion-card>
+    <img alt="Silhouette of mountains" src="assets/concierto.webp" />
+    <ion-card-header>
+      <ion-card-title>Concierto a puertas abiertas</ion-card-title>
+      <ion-card-subtitle>2:00 PM</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-button>Registrar</ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  
+  <ion-card>
+    <img alt="Silhouette of mountains" src="assets/tuerca.jpg" />
+    <ion-card-header>
+      <ion-card-title>Expo taller</ion-card-title>
+      <ion-card-subtitle>4:00 PM</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-button>Registrar</ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+
+</ion-content>

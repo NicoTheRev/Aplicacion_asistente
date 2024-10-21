@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulos-toolbar" >Actualizar Perfil</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+       <ion-card-title>Datos perfil</ion-card-title>
+        </ion-card-header>
+
+    <ion-card-content>
+    <!-- <div *ngFor="let i of usuario">
+        <h3>{{ i.username }}</h3>
+        <h3>{{ i.nombre }}</h3>
+        <h3>{{ i.apellidos }}</h3>
+
+      </div> -->
+        <ion-item>
+          <!-- <ion-input type="text"  label="Username:" [(ngModel)]="perfil.username"  labelPlacement="floating"></ion-input> -->
+        </ion-item>
+    
+         
+    
+        <ion-item>
+          <ion-input type="email"  label="Email:" labelPlacement="floating" placeholder="ej: usuario@gmail.com"></ion-input>
+        </ion-item>
+    
+          
+    
+        <ion-item>
+          <ion-input type="password"  label="Password:" labelPlacement="floating"></ion-input>
+        </ion-item>
+    
+          
+        <ion-item>
+          <ion-input type="nombre" placeholder="Ej: Giovanni"  label="Nombre:" labelPlacement="floating"></ion-input>
+        </ion-item>
+    
+          
+          
+        <ion-item>
+          <ion-input type="apellidos"  label="Apellidos:" labelPlacement="floating"></ion-input>
+        </ion-item>
+    
+          
+
+        <ion-item>
+          <ion-input type="rut"  label="Rut:" labelPlacement="floating"></ion-input>
+        </ion-item>
+    
+          
+        
+        <div style="text-align: center; margin-top: 30px;">
+          <ion-button  shape="round">
+            Actualizar informacion
+          </ion-button>
+        </div>
+        
+    </ion-card-content>
+    <!--insertar un boton, centrar el boton, aplicar css personalizado
+       invocar método debe tener mensaje y un solo botón ok, redireccionando al page de Inicio-->
+       <div style="text-align: center; padding-bottom: 20px;">
+        <!-- <ion-button (click)="mostrarMensaje()" fill="solid" shape="round">
+          Enviar datos
+        </ion-button> -->
+       </div>
+      
+
+  </ion-card>
+</ion-content>
