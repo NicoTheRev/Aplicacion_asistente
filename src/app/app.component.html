@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu contentId="main" menuId="first" side="start" type="overlay">
+  <ion-menu contentId="main" menuId="first" side="start" type="overlay" [disabled]="true">
     <ion-header mode="md">
       <ion-toolbar color="dark" mode="md">
         <ion-title>Menú</ion-title>
@@ -15,6 +15,11 @@
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
+      <ion-footer>
+        <ion-button (click)="logout()" fill="solid" shape="round">
+          Cerrar Sesion
+        </ion-button> 
+      </ion-footer>
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main"></ion-router-outlet>

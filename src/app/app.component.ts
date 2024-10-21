@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
+
 
 interface Opciones{
   icon:string;
@@ -29,8 +33,20 @@ export class AppComponent {
       name: 'Actividades',
       redirecTo:'/actividades'
     },
+    {
+      icon:'log-out',
+      name: 'Log Out',
+      redirecTo:'/login',
+    },
 
   ]
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router,private menucontroller: MenuController) {}
+
+  logout(): void {
+    this.authService.logOut();
+    this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
+    this.menucontroller.enable(false);
+    this.menucontroller.close('first');
+  }
 }

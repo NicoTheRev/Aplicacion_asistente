@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title style="text-align: center;">Eventos disponibles</ion-title>
+    <ion-title class="titulos-toolbar">Eventos disponibles</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,45 +17,56 @@
   </ion-header>
 
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <img alt="Silhouette of mountains" src="assets/futbol.webp"/>
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Torneo de futbol</ion-card-title>
+      <ion-card-subtitle>7:00 PM</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
       Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content>
-
-    <ion-button>Registrar</ion-button>
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-button>Registrar</ion-button>
+      </ion-row>
+    </ion-grid>
   </ion-card>
   
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <img alt="Silhouette of mountains" src="assets/concierto.webp" />
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Concierto a puertas abiertas</ion-card-title>
+      <ion-card-subtitle>2:00 PM</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
       Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content>
 
-    <ion-button>Registrar</ion-button>
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-button>Registrar</ion-button>
+      </ion-row>
+    </ion-grid>
   </ion-card>
   
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <img alt="Silhouette of mountains" src="assets/tuerca.jpg" />
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Expo taller</ion-card-title>
+      <ion-card-subtitle>4:00 PM</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
       Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content>
 
-    <ion-button>Registrar</ion-button>
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-button>Registrar</ion-button>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 
 
