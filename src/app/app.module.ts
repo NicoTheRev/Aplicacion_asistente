@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
