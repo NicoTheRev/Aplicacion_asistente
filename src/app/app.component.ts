@@ -34,11 +34,6 @@ export class AppComponent {
       name: 'Actividades',
       redirecTo:'/actividades'
     },
-    {
-      icon:'log-out',
-      name: 'Log Out',
-      redirecTo:'/login',
-    },
 
   ]
 

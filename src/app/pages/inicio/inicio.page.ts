@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-inicio',
@@ -9,35 +10,21 @@ import { Router } from '@angular/router';
 })
 export class InicioPage implements OnInit {
 
-  eventos: any[] = [
-    {
-      nombreEvento: 'Torneo de futbol',
-      fecha: '2024-11-01',
-      nombrePersona: 'Juan Perez',
-      RUT: '12588999-7',
-      hora: '7:00 PM'
-    },
-    {
-      nombreEvento: 'Concierto a puertas abiertas',
-      fecha: '2024-11-10',
-      nombrePersona: 'Maria Lopez',
-      RUT: '98765432-1',
-      hora: '2:00 PM'
-    },
-    {
-      nombreEvento: 'Expo taller',
-      fecha: '2024-11-20',
-      nombrePersona: 'Carlos Sanchez',
-      RUT: '65432109-3',
-      hora: '4:00 PM'
-    }
-  ];
-
+  eventos: any[] = [];
   qrData: string = '';
 
   constructor(private menucontroller: MenuController,
-              private router: Router,
+              private router: Router,private http: HttpClient
   ) {}
+
+  cargarEventos() {
+    this.http.get<any[]>('http://localhost:3000/eventos') // Cambiar a la URL del json-server
+      .subscribe(data => {
+        this.eventos = data;
+      }, error => {
+        console.error('Error al cargar los eventos desde la API', error);
+      });
+  }
 
   generarQR(evento: any) {
     const idCorto = evento.RUT.substring(0, 8);  // Obtener los primeros 8 dígitos del RUT
@@ -55,5 +42,6 @@ export class InicioPage implements OnInit {
   }
   ngOnInit() {
     this.menucontroller.enable(true);
+    this.cargarEventos(); // Cargar los eventos al iniciar
   }
 }
