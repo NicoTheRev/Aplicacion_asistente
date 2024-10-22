@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -34,13 +35,20 @@ export class InicioPage implements OnInit {
 
   qrData: string = '';
 
-  constructor(private menucontroller: MenuController) {}
+  constructor(private menucontroller: MenuController,
+              private router: Router,
+  ) {}
 
   generarQR(evento: any) {
     const idCorto = evento.RUT.substring(0, 8);  // Obtener los primeros 8 dígitos del RUT
     this.qrData = `Evento: ${evento.nombreEvento}, Fecha: ${evento.fecha}, Hora: ${evento.hora}, Nombre: ${evento.nombrePersona}, RUT: ${idCorto}`;
   }
   
+  comentarios(evento: any) {
+    this.router.navigate(['/comentarios', evento],
+      {queryParams:{evento: JSON.stringify(evento)}}
+    )
+  }
 
   mostrarMenu(){
     this.menucontroller.open('first');
