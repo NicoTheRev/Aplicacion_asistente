@@ -54,14 +54,12 @@ export class PerfilPage implements OnInit {
     this.apicrud.getUser().subscribe((data) => { 
       this.usuario=data;
       this.perfil=this.usuario;
-      console.log(this.perfil)
   })
   }
 
   async actualizar(){
     const alert = await this.alert.create({
       header: 'Actualización',
-      mode:'ios',
       message: 'Necesita actualizar la información?',
       buttons: [
         {
@@ -75,7 +73,7 @@ export class PerfilPage implements OnInit {
           text: 'No',
           role: 'cancel',
           handler: () => {
-            this.router.navigate(['/tabs/tab1']);
+            this.router.navigate(['/inicio']);
           },
         },
       ],

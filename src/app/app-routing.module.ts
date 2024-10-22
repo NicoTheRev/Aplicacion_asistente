@@ -40,6 +40,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/actualizar-perfil/actualizar-perfil.module').then( m => m.ActualizarPerfilPageModule),
     canActivate: [autorizadoGuard]
   },
+  {
+    path: 'comentarios',
+    loadChildren: () => import('./pages/comentarios/comentarios.module').then( m => m.ComentariosPageModule),
+    canActivate: [autorizadoGuard]
+  },
+
 
 
 ];

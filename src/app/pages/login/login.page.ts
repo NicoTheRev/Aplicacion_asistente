@@ -46,7 +46,6 @@ export class LoginPage implements OnInit {
 
     this.authservice.GetUserByUsername(username).subscribe(resp =>{
       this.userdata = resp;
-      console.log(this.userdata);
       if (this.userdata.length === 0) {
         this.loginForm.reset();
         this.UsuarioNoExiste();
