@@ -62,6 +62,7 @@ export class InicioPage implements OnInit {
 
   mostrarMenu(){
     this.menucontroller.open('first');
+    this.menucontroller.enable(true);
   }
   ngOnInit() {
     this.menucontroller.enable(true);
