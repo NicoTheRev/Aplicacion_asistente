@@ -39,6 +39,7 @@ export class ActividadesPage implements OnInit {
     this.getUsuario(); 
   }
 
+  // funcion para retornar los datos del usuario
   getUsuario() {
     this.apicrud.getUser().subscribe((user) => { 
       this.usuario=user;
@@ -47,6 +48,7 @@ export class ActividadesPage implements OnInit {
   })
   }
 
+  // funcion para retornar los datos de los eventos que tenga la persona
   getEventos(username: any) {
     this.apicrud.getMisEventos(username).subscribe((data) => {
       this.eventos = data

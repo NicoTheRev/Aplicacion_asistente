@@ -16,6 +16,7 @@
   <ion-header collapse="condense">
   </ion-header>
 
+  <!-- muestra la informacion del evento que se selecciono -->
   <ion-card *ngIf="evento">
     <img [src]="evento.src" alt="Imagen de evento" style="width: 500px;"/>
     <ion-card-header>
@@ -36,6 +37,7 @@
     </ion-grid>
   </ion-card>
 
+  <!-- en esta parte se muestra un modal con el qr del evento -->
   <ion-modal [isOpen]="isModalOpen">
     <ng-template>
       <ion-header>

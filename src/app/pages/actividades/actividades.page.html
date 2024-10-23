@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <!-- Muestra todos los eventos que tenga registrada la persona -->
   <ion-card *ngFor="let evento of eventos">
     <img [src]="evento.src" alt="Imagen de evento"/>
     <ion-card-header>
@@ -23,8 +23,6 @@
     <ion-grid fixed>
       <ion-row class="ion-justify-content-center">
           <ion-button (click)="linkToEvento(evento)" class="boton-eventos">Informacion</ion-button>
-          <!-- <ion-button (click)="guardarEvento(evento)">Registrar</ion-button>
-        <ion-button (click)="comentarios(evento)">comentarios</ion-button> -->
       </ion-row>
     </ion-grid>
   </ion-card>

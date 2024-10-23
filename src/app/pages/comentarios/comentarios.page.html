@@ -12,6 +12,7 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- Muestra los datos del evento seleccionado -->
 <ion-content [fullscreen]="true">
   <ion-card *ngIf="evento">
     <ion-card-header>
@@ -20,6 +21,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
+        <!-- desde aca muestra los comentarios del evento seleccionado -->
         <ion-item *ngFor="let i of comentarios">
           <ion-label>
             <h3 style="font-style: italic; font-weight: bold;">- {{i.usuario}}</h3>
