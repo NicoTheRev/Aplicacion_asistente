@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="titulos-toolbar">Eventos disponibles</ion-title>
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-button (click)="mostrarMenu()">
         <ion-icon slot="end" name="menu-outline" color="dark"></ion-icon>
       </ion-button>
@@ -22,7 +22,7 @@
     <swiper-slide *ngFor="let evento of eventos; let i = index">
       <ion-card>
         <!-- Imágenes por defecto-->
-        <img [src]="i === 0 ? 'assets/futbol.webp' : i === 1 ? 'assets/concierto.webp' : 'assets/tuerca.jpg'" alt="Imagen de evento"/>
+        <img [src]="evento.src" alt="Imagen de evento"/>
         <ion-card-header>
           <ion-card-title>{{ evento.nombreEvento }}</ion-card-title>
           <ion-card-subtitle>{{ evento.hora }}</ion-card-subtitle>
@@ -32,7 +32,7 @@
         </ion-card-content>
         <ion-grid fixed>
           <ion-row class="ion-justify-content-center">
-            <ion-button (click)="generarQR(evento)">Registrar</ion-button>
+            <ion-button (click)="guardarEvento(evento)">Registrar</ion-button>
             <ion-button (click)="comentarios(evento)">comentarios</ion-button>
           </ion-row>
         </ion-grid>

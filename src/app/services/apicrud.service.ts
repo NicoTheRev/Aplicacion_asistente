@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Users } from 'src/interfaces/users';
 import { Comentario } from 'src/interfaces/comentarios'; 
+import { misEventos } from 'src/interfaces/misEventos';  
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -30,5 +31,13 @@ export class ApicrudService {
 
   putComentario(coment:any): Observable<Comentario> {
     return this.httpclient.post<Comentario>(`${environment.apiUrl}/comentarios`, coment)
+  }
+
+  getMisEventos(user:any): Observable<misEventos[]> {
+    return this.httpclient.get<misEventos[]>(`${environment.apiUrl}/misEventos?username=${user}`)
+  }
+  
+  putMisEventos(event:any): Observable<misEventos> {
+    return this.httpclient.post<misEventos>(`${environment.apiUrl}/misEventos`, event)
   }
 }

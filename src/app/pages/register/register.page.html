@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="titulos-toolbar">Registrar</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" ></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -14,10 +17,6 @@
 
       <form [formGroup]="registroForm" enctype="multipart/form-data">
 
-        <ion-item>
-          <ion-label>Selecciona una imagen</ion-label>
-          <input type="file" (change)="onFileSelected($event)" accept="image/*" />
-        </ion-item>
         <ion-item>
           <ion-input type="text" formControlName="username" label="Username:" labelPlacement="floating"></ion-input>
         </ion-item>
@@ -110,14 +109,6 @@
         
       </form>
     </ion-card-content>
-    <!--insertar un boton, centrar el boton, aplicar css personalizado
-       invocar método debe tener mensaje y un solo botón ok, redireccionando al page de Inicio-->
-       <div style="text-align: center; padding-bottom: 20px;">
-        <ion-button (click)="mostrarMensaje()" fill="solid" shape="round">
-          Enviar datos
-        </ion-button>
-       </div>
-      
 
   </ion-card>
 </ion-content>

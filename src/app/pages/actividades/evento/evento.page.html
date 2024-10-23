@@ -1,11 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-title class="titulos-toolbar">Mis eventos</ion-title>
     <ion-buttons slot="start">
-    <ion-back-button
-      color="dark">
-    </ion-back-button>
-  </ion-buttons>
-  <ion-title class="titulos-toolbar">Evento</ion-title>
+      <ion-back-button defaultHref="/" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,16 +16,25 @@
   <ion-header collapse="condense">
   </ion-header>
 
-  <img src="assets/duoc.jpg" style="width: 500px;" />
-  <div style="text-align: center; padding: 5px;">
-    <h1>Evento Gamer Duoc</h1>
-    <h3>Informacion</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos culpa tempora deserunt voluptatum cum saepe, quos ipsam aspernatur repudiandae deleniti reiciendis aperiam placeat sed rerum ducimus accusantium atque voluptatem quod?
-    Ducimus facilis ipsa, qui rerum provident alias harum pariatur, fugiat vitae aliquam amet unde, architecto consequuntur quibusdam officiis quisquam sunt minima libero corrupti hic tenetur et blanditiis. Veritatis, dicta quae.
-    Beatae porro quas suscipit, sequi mollitia ex, et quaerat voluptatem delectus eius nostrum doloribus amet vero ducimus animi ipsam unde saepe commodi quibusdam aut. Dolor minus placeat saepe obcaecati tempora?</p>
-  </div>
-
-  <ion-button expand="block" (click)="setOpen(true)">Entrada QR</ion-button>
+  <ion-card *ngIf="evento">
+    <img [src]="evento.src" alt="Imagen de evento" style="width: 500px;"/>
+    <ion-card-header>
+      <div style="text-align: center; padding: 5px;">
+        <h1>{{ evento.nombreEvento }}</h1>
+        <h3>Fecha: {{ evento.fechaEvento }}</h3>
+        <h3>Hora: {{ evento.hora }}</h3>
+        </div>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos culpa tempora deserunt voluptatum cum saepe, quos ipsam aspernatur repudiandae deleniti reiciendis aperiam placeat sed rerum ducimus accusantium atque voluptatem quod?
+        Ducimus facilis ipsa, qui rerum provident alias harum pariatur, fugiat vitae aliquam amet unde, architecto consequuntur quibusdam officiis quisquam sunt minima libero corrupti hic tenetur et blanditiis. Veritatis, dicta quae.</p> -->
+    </ion-card-content>
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-button expand="block" (click)="setOpen(true)">Entrada QR</ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 
   <ion-modal [isOpen]="isModalOpen">
     <ng-template>
@@ -37,7 +49,9 @@
       <ion-content class="ion-padding">
         <ion-grid fixed>
           <ion-row class="ion-justify-content-center">
-            <img src="assets/QR_DUOCUC.png" >
+            <div *ngIf="qrData" style="text-align: center;">
+              <qrcode [qrdata]="qrData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+            </div>
           </ion-row>
         </ion-grid>
       </ion-content>
