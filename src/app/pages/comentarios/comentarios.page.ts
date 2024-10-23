@@ -53,7 +53,6 @@ inputComentario: string = '';
   getComentarios() {
     this.apicrud.getComentarios(this.evento.nombreEvento).subscribe((com) => {
       this.comentarios = com;
-      console.log(this.comentarios)
     } )
   }
 
@@ -63,5 +62,8 @@ inputComentario: string = '';
     this.coment.comentario = this.inputComentario
     this.apicrud.putComentario(this.coment).subscribe();
     this.inputComentario = ""
+    this.getComentarios()
+    this.router.navigate(['/inicio'])
+
   }
 }

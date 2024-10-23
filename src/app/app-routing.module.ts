@@ -5,7 +5,8 @@ import { autorizadoGuard } from './guards/autorizado.guard';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [autorizadoGuard]
   },
   {
     path: '',

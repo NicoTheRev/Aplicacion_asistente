@@ -1,7 +1,7 @@
 <ion-app>
-  <ion-menu contentId="main" menuId="first" side="start" type="overlay" [disabled]="true">
+  <ion-menu contentId="main" menuId="first" side="end" type="overlay" [disabled]="true">
     <ion-header mode="md">
-      <ion-toolbar color="dark" mode="md">
+      <ion-toolbar color="tertiary" mode="md">
         <ion-title>Menú</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -10,15 +10,16 @@
       <ion-list>
         <ion-menu-toggle *ngFor="let m of opciones">
           <ion-item [routerLink]="m.redirecTo" detail="true">
-            <ion-icon slot="start" [name]="m.icon" color="dark"></ion-icon>
+            <ion-icon slot="start" [name]="m.icon" color="tertiary"></ion-icon>
             <ion-label>{{m.name}}</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
       <ion-footer>
-        <ion-button (click)="logout()" fill="solid" shape="round" >
-          Cerrar Sesion
-        </ion-button> 
+          <ion-button expand="full" (click)="logout()" fill="clear" color="danger" >
+            Cerrar Sesion
+            <ion-icon slot="end" name="exit"></ion-icon>
+          </ion-button> 
       </ion-footer>
     </ion-content>
   </ion-menu>

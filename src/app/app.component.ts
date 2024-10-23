@@ -31,13 +31,8 @@ export class AppComponent {
     },
     {
       icon:'calendar',
-      name: 'Actividades',
+      name: 'Mis actividades',
       redirecTo:'/actividades'
-    },
-    {
-      icon:'log-out',
-      name: 'Log Out',
-      redirecTo:'/login',
     },
 
   ]
